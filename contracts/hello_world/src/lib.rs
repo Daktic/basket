@@ -2,12 +2,17 @@
 use soroban_sdk::{contract, contractimpl, symbol_short, vec, Env, Symbol, Vec};
 
 #[contract]
-pub struct HelloContract;
+pub struct BasketContract;
 
 #[contractimpl]
-impl HelloContract {
+impl BasketContract {
     pub fn hello(env: Env, to: Symbol) -> Vec<Symbol> {
         vec![&env, symbol_short!("Hello"), to]
+    }
+
+    pub fn new(env: Env) -> Self {
+
+        Self
     }
 }
 
